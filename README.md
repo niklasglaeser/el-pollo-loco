@@ -1,1 +1,1 @@
-# el-pollo-loco
+# pollo-loco

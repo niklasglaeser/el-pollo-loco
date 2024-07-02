@@ -1,0 +1,693 @@
+@font-face {
+    font-family: 'zabras';
+    src: url('fonts/zabars.ttf') format('truetype');
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: #0B1215;
+    background-image: url('img/desert-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    margin: 0;
+    height: 100vh;
+    max-height: 1080px;
+    width: 1920px;
+}
+
+canvas {
+    display: flex;
+}
+
+.orientation {
+    display: none;
+}
+
+.width-check {
+    display: none;
+}
+
+#mobile-overlay {
+    width: 720px;
+    height: 480px;
+    display: none;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: absolute;
+    z-index: 100;
+}
+
+#menu-button {
+    position: absolute;
+    display: flex;
+    width: 720px;
+    height: 480px;
+    margin-top: 0px;
+}
+
+#sound-button {
+    position: absolute;
+    display: flex;
+    width: 720px;
+    height: 480px;
+    margin-top: 0px;
+}
+
+#soundControlInGame {
+    position: absolute;
+    left: 227px;
+    top: 23px;
+    padding: 0;
+    padding-inline: 0;
+    padding-block: 0;
+    border: none;
+    z-index: 500;
+    background-color: transparent;
+    border-radius: 10px;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    filter: invert(100%);
+    cursor: pointer;
+}
+
+#soundControlInGame img {
+    height: 28px;
+    width: 28px;
+}
+
+#soundControlInGame:hover {
+    filter: none;
+}
+
+#backToMenu {
+    position: absolute;
+    left: 465px;
+    top: 20px;
+    padding: 0;
+    padding-inline: 0;
+    padding-block: 0;
+    border: none;
+    z-index: 500;
+    background-color: transparent;
+    border-radius: 10px;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    filter: invert(100%);
+    cursor: pointer;
+}
+
+#backToMenu img {
+    height: 32px;
+    width: 32px;
+}
+
+#backToMenu:hover {
+    filter: none;
+}
+
+.mobile-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+.mobile-button {
+    height: 48px;
+    width: 48px;
+    padding: 0;
+    background-color: darkorange;
+    border: none;
+    border-radius: 40px;
+}
+
+.bottle-button {
+    height: 48px;
+    width: 48px;
+    padding: 0;
+    border-radius: 40px;
+    background-color: darkorange;
+    border: none;
+}
+
+.bottle-button img {
+    width: 48px;
+    height: 48px;
+}
+
+
+#start-screen {
+    position: relative;
+    display: flex;
+    width: 720px;
+    height: 480px;
+    gap: 100px;
+}
+
+#impressumOverlay {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    width: 720px;
+    height: 480px;
+    overflow-y: scroll;
+    background-color: darkorange;
+    z-index: 500;
+}
+
+#closeImpressum {
+    display: flex;
+    position: fixed;
+    align-self: flex-end;
+    margin-right: 30px;
+    margin-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+#closeImpressum:hover {
+    border-color: white;
+    color: white;
+}
+
+#impressumContent {
+    padding-left: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+#privacyPolicy {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-right: 70px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#start-screen img {
+    width: 100%;
+    height: 100%;
+}
+
+#play-button {
+    position: absolute;
+    top: 30px;
+    left: 260px;
+    height: 80px;
+    width: 200px;
+    font-size: 40px;
+    cursor: pointer;
+    background-color: darkorange;
+    border: 2px solid black;
+    border-radius: 30px;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    z-index: 200;
+    color: black;
+    padding: 0;
+}
+
+#play-button:hover {
+    background-color: rgb(225, 127, 7);
+}
+
+#manual-button {
+    position: absolute;
+    top: 50px;
+    left: 480px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: darkorange;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    z-index: 200;
+    width: 150px;
+    height: 48px;
+    color: black;
+    padding: 0;
+}
+
+#manual-button:hover {
+    background-color: rgb(225, 127, 7);
+}
+
+#game-story {
+    position: absolute;
+    top: 50px;
+    left: 90px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: darkorange;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    z-index: 200;
+    width: 150px;
+    height: 48px;
+    color: black;
+    padding: 0;
+}
+
+#game-story:hover {
+    background-color: rgb(225, 127, 7);
+}
+
+#soundControl:hover {
+    background-color: rgb(225, 127, 7);
+}
+
+#soundControl {
+    position: absolute;
+    top: 50px;
+    left: 640px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: darkorange;
+    border: 2px solid black;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    z-index: 200;
+    color: black;
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#soundControlIcon {
+    height: 32px !important;
+    width: 32px !important;
+}
+
+#impressum {
+    position: absolute;
+    top: 50px;
+    left: 32px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: darkorange;
+    border: 2px solid black;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    z-index: 500;
+    color: black;
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#impressum:hover {
+    background-color: rgb(225, 127, 7);
+}
+
+#impressumIcon {
+    height: 32px !important;
+    width: 32px !important;
+}
+
+#manual {
+    position: absolute;
+    top: 130px;
+    left: 240px;
+    width: 440px;
+    height: 300px;
+    border: 3px solid black;
+    background-color: darkorange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+#controls {
+    display: flex;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+#controls div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#gameExplanation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 30px;
+    padding-left: 20px;
+    padding-right: 15px;
+}
+
+.manual-instruction {
+    color: black;
+    font-size: 40px;
+}
+
+#close-manual {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+#loseButton {
+    position: absolute;
+    background-color: transparent;
+    border: 1px solid;
+    padding: 30px;
+    background-color: darkorange;
+    opacity: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    border-radius: 15px;
+    z-index: 300;
+    margin-top: -50px;
+}
+
+#loseButton:hover {
+    background-color: rgb(225, 127, 7);
+}
+
+#winButton:hover {
+    background-color: rgb(225, 127, 7);
+}
+
+#winButton {
+    position: absolute;
+    background-color: transparent;
+    border: 1px solid;
+    padding: 30px;
+    background-color: darkorange;
+    opacity: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    border-radius: 15px;
+    z-index: 300;
+    margin-top: -50px;
+}
+
+#creditSection {
+    display: flex;
+    flex-direction: column;
+    color: black !important;
+    font-size: 22px;
+    padding-left: 30px;
+    gap: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 50px;
+    padding-top: 30px;
+    text-decoration: none;
+}
+
+
+
+
+@media (max-width: 666px) {
+    .orientation {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        color: white;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #mobile-overlay {
+        display: none !important;
+    }
+
+    canvas {
+        display: none !important;
+    }
+
+    .landscape-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #start-screen {
+        display: none !important;
+    }
+}
+
+@media (max-width: 720px) {
+
+    #start-screen {
+        width: 667px !important;
+    }
+
+    canvas {
+        width: 667px;
+    }
+
+    #mobile-overlay {
+        width: 667px;
+    }
+
+    #menu-button {
+        width: 667px;
+    }
+
+    #impressumOverlay {
+        width: 667px;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    #manual {
+        height: 220px !important;
+        width: 300px !important;
+        font-size: 24px;
+    }
+
+    #play-button {
+        top: 10px;
+        width: 160px;
+        font-size: 32px;
+    }
+
+    #manual-button {
+        top: 20px;
+        left: 440px;
+    }
+
+    #soundControl {
+        top: 20px;
+        left: 600px;
+    }
+
+    #game-story {
+        top: 20px;
+    }
+
+    #impressum {
+        top: 20px;
+        left: 24px;
+    }
+
+    #gameExplanation {
+        font-size: 18px;
+    }
+
+    .manual-instruction {
+        font-size: 20px;
+    }
+}
+
+@media (max-height: 480px) {
+    canvas {
+        height: 100vh;
+        width: 667px;
+    }
+
+    #start-screen {
+        height: 100vh !important;
+    }
+
+    #mobile-overlay {
+        height: 100vh;
+        width: 667px;
+    }
+
+    #menu-button {
+        height: 100vh;
+        width: 667px;
+    }
+
+    #sound-button {
+        height: 100vh;
+        width: 667px;
+    }
+
+    #backToMenu {
+        left: 430px;
+        top: 10px;
+    }
+
+    #soundControlInGame {
+        left: 210px;
+        top: 12px;
+
+    }
+
+    #impressumOverlay {
+        height: 100vh;
+    }
+
+
+    #manual {
+        top: 100px;
+        height: 240px !important;
+        width: 340px !important;
+        font-size: 24px;
+    }
+
+    #mobile-overlay {
+        height: 100vh;
+    }
+
+    #play-button {
+        top: 10px;
+    }
+
+    #manual-button {
+        top: 20px;
+    }
+
+    #soundControl {
+        top: 20px;
+    }
+
+    #game-story {
+        top: 20px;
+    }
+
+    #impressum {
+        top: 20px;
+    }
+
+    #gameExplanation {
+        font-size: 24px;
+    }
+
+    .manual-instruction {
+        font-size: 30px;
+    }
+}
+
+
+@media (max-width: 666px) and (orientation: landscape) {
+    .width-check {
+        display: flex;
+    }
+
+    .orientation {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    #play-button {
+        top: 10px;
+        width: 160px;
+        font-size: 32px;
+    }
+
+    #manual-button {
+        top: 20px;
+        left: 440px;
+    }
+
+    #soundControl {
+        top: 20px;
+        left: 600px;
+    }
+
+    #game-story {
+        top: 20px;
+    }
+
+    #impressum {
+        top: 20px;
+        left: 24px;
+    }
+}
+
+@media (min-width: 1000px) {
+    #mobile-overlay {
+        height: 100vh;
+        width: 100%;
+        align-items: center;
+    }
+
+    .mobile-buttons {
+        padding-right: 60px;
+        padding-left: 60px;
+        padding-bottom: 60px;
+        gap: 60px;
+    }
+
+    .mobile-buttons button {
+        border: 1px solid black;
+    }
+
+    .bottle-button img {
+        width: 46px;
+        height: 46px;
+    }
+    
+}
+
+@media (pointer: coarse) {
+    #mobile-overlay {
+        display: flex;
+    }
+}
