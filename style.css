@@ -549,7 +549,7 @@ canvas {
     }
 
     #start-screen {
-        height: 100vh !important;
+        height: 100svh !important;
     }
 
     #mobile-overlay {
